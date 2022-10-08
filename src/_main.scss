@@ -1,0 +1,29 @@
+@mixin flex {
+  display: flex;
+}
+
+@mixin flexAlignCenter {
+  @include flex;
+  align-items: center;
+}
+
+@mixin flexSpaceBetween {
+  @include flexAlignCenter;
+  justify-content: space-between;
+}
+
+@mixin tableBorder {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+@mixin hideScrollbar() {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  & {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}

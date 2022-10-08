@@ -1,26 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useEffect } from 'react';
 
-function App() {
+import { Routes, Route, useNavigate } from 'react-router-dom';
+
+import Header from 'components/Header';
+
+import { ROUTES } from 'utils';
+
+import './App.scss';
+
+const App = () => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (window.location.pathname === '/') {
+      navigate('/table');
+    }
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='app'>
+      <Header />
+
+      <Routes>
+        {ROUTES.map(({ path, element: Element }) => (
+          <Route path={path} element={<Element />} key={path} />
+        ))}
+
+        <Route path='*' element={<div>404 Page Not Found</div>} />
+      </Routes>
     </div>
   );
-}
+};
 
 export default App;

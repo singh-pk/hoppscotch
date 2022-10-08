@@ -1,0 +1,28 @@
+@import 'main';
+
+.tableBodyContainer {
+  max-height: 650px;
+  overflow-x: auto;
+
+  @include hideScrollbar;
+}
+
+.tableRow {
+  position: relative;
+
+  animation-name: fadeIn;
+  animation-duration: 500ms;
+  animation-iteration-count: 1;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    left: -20px;
+  }
+
+  to {
+    opacity: 1;
+    left: 0;
+  }
+}

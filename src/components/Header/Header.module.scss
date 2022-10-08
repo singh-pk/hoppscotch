@@ -1,0 +1,14 @@
+@import 'main';
+
+.header {
+  @include flexSpaceBetween;
+}
+
+.activeLink {
+  visibility: hidden;
+}
+
+.link {
+  font-size: 1.2rem;
+  text-decoration: none;
+}

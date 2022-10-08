@@ -1,0 +1,20 @@
+@import 'main';
+
+.tableContainer {
+  width: 100%;
+
+  table {
+    width: 100%;
+    table-layout: fixed;
+
+    &,
+    td {
+      @include tableBorder;
+      padding: 0.5rem;
+    }
+
+    thead {
+      font-weight: bold;
+    }
+  }
+}
