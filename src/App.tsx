@@ -15,6 +15,8 @@ const App = () => {
     if (window.location.pathname === '/') {
       navigate('/table');
     }
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

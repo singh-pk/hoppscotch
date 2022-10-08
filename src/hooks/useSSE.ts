@@ -25,6 +25,8 @@ const useSSE = <T>(url: string | URL, events: string[]) => {
     sse.addEventListener('error', () => {
       setIsLoading(false);
     });
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const deleteEventListeners = useCallback((sse: EventSource) => {
@@ -37,6 +39,8 @@ const useSSE = <T>(url: string | URL, events: string[]) => {
     sse.removeEventListener('error', () => {});
 
     sse.close();
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -47,6 +51,8 @@ const useSSE = <T>(url: string | URL, events: string[]) => {
     return () => {
       deleteEventListeners(sse);
     };
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return { data, isLoading };
